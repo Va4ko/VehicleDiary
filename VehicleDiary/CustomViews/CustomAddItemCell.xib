@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="nasalization-rg.ttf">
+            <string>NasalizationRg-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomAddItemTableViewCell" id="7uh-hb-aE8" customClass="CustomAddItemTableViewCell" customModule="VehicleDiary" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7uh-hb-aE8" id="bXg-vn-4Jk">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CXJ-a6-V16">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdZ-5b-3XL" userLabel="Type">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item type here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c3h-UR-ghf">
+                                        <rect key="frame" x="2" y="2" width="410" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="c3h-UR-ghf" secondAttribute="trailing" constant="2" id="DN2-NM-5JS"/>
+                                    <constraint firstItem="c3h-UR-ghf" firstAttribute="top" secondItem="vdZ-5b-3XL" secondAttribute="top" constant="2" id="XZ0-to-XZp"/>
+                                    <constraint firstAttribute="bottom" secondItem="c3h-UR-ghf" secondAttribute="bottom" constant="2" id="c4d-GB-t4y"/>
+                                    <constraint firstItem="c3h-UR-ghf" firstAttribute="leading" secondItem="vdZ-5b-3XL" secondAttribute="leading" constant="2" id="oDW-AD-GdH"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3qh-U7-bei">
+                                <rect key="frame" x="0.0" y="43" width="414" height="157"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImg" translatesAutoresizingMaskIntoConstraints="NO" id="DZg-Ap-8dg">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="157"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-kP-1qe">
+                                        <rect key="frame" x="102" y="0.0" width="312" height="157"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-pv-Eo1">
+                                                <rect key="frame" x="0.0" y="0.0" width="312" height="35"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJ9-5i-2xT" userLabel="Date">
+                                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="35"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Purchased date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0W-qt-pg2">
+                                                                <rect key="frame" x="2" y="2" width="149.5" height="31"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="l0W-qt-pg2" secondAttribute="trailing" constant="2" id="0IR-cW-XN4"/>
+                                                            <constraint firstItem="l0W-qt-pg2" firstAttribute="top" secondItem="SJ9-5i-2xT" secondAttribute="top" constant="2" id="Ggb-vR-8Bn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="l0W-qt-pg2" secondAttribute="bottom" constant="2" id="cG8-ot-kSJ"/>
+                                                            <constraint firstItem="l0W-qt-pg2" firstAttribute="leading" secondItem="SJ9-5i-2xT" secondAttribute="leading" constant="2" id="vlc-9R-Jc8"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKL-7T-Cu1" userLabel="Price">
+                                                        <rect key="frame" x="158.5" y="0.0" width="153.5" height="35"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWt-oP-m4L">
+                                                                <rect key="frame" x="2" y="2" width="149.5" height="31"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="TWt-oP-m4L" firstAttribute="leading" secondItem="GKL-7T-Cu1" secondAttribute="leading" constant="2" id="8Bp-3d-vxt"/>
+                                                            <constraint firstItem="TWt-oP-m4L" firstAttribute="top" secondItem="GKL-7T-Cu1" secondAttribute="top" constant="2" id="Ssv-ec-cnv"/>
+                                                            <constraint firstAttribute="trailing" secondItem="TWt-oP-m4L" secondAttribute="trailing" constant="2" id="V8u-H2-FZn"/>
+                                                            <constraint firstAttribute="bottom" secondItem="TWt-oP-m4L" secondAttribute="bottom" constant="2" id="cAM-aS-Fsr"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="MEy-Xh-NAX"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="y1b-TT-owv">
+                                                <rect key="frame" x="0.0" y="40" width="312" height="117"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itx-8L-8x3" userLabel="Shop">
+                                                        <rect key="frame" x="0.0" y="0.0" width="312" height="35.5"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter shop" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZOA-iD-EFC">
+                                                                <rect key="frame" x="2" y="2" width="308" height="31.5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="ZOA-iD-EFC" firstAttribute="top" secondItem="itx-8L-8x3" secondAttribute="top" constant="2" id="2Fd-vg-tU0"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ZOA-iD-EFC" secondAttribute="bottom" constant="2" id="5et-HK-mjl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ZOA-iD-EFC" secondAttribute="trailing" constant="2" id="8Uc-ol-EVT"/>
+                                                            <constraint firstItem="ZOA-iD-EFC" firstAttribute="leading" secondItem="itx-8L-8x3" secondAttribute="leading" constant="2" id="h3s-5B-JOY"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QG-Qf-b8K" userLabel="Service">
+                                                        <rect key="frame" x="0.0" y="40.5" width="312" height="36"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter service" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-cf-wVi">
+                                                                <rect key="frame" x="2" y="2" width="308" height="32"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="jcx-cf-wVi" firstAttribute="leading" secondItem="0QG-Qf-b8K" secondAttribute="leading" constant="2" id="F0z-QR-uTu"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jcx-cf-wVi" secondAttribute="bottom" constant="2" id="ShS-QF-SNV"/>
+                                                            <constraint firstItem="jcx-cf-wVi" firstAttribute="top" secondItem="0QG-Qf-b8K" secondAttribute="top" constant="2" id="gHE-8w-RFS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jcx-cf-wVi" secondAttribute="trailing" constant="2" id="o7Y-0h-w48"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-WR-b3G" userLabel="Details">
+                                                        <rect key="frame" x="0.0" y="81.5" width="312" height="35.5"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNt-gY-uST">
+                                                                <rect key="frame" x="2" y="2" width="308" height="31.5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="ZNt-gY-uST" firstAttribute="leading" secondItem="KsB-WR-b3G" secondAttribute="leading" constant="2" id="6W9-mv-dBS"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ZNt-gY-uST" secondAttribute="bottom" constant="2" id="DOw-cg-5xt"/>
+                                                            <constraint firstItem="ZNt-gY-uST" firstAttribute="top" secondItem="KsB-WR-b3G" secondAttribute="top" constant="2" id="Uaj-MG-OPz"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ZNt-gY-uST" secondAttribute="trailing" constant="2" id="hM1-6A-YHg"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CXJ-a6-V16" firstAttribute="top" secondItem="bXg-vn-4Jk" secondAttribute="top" id="dL0-jM-cHn"/>
+                    <constraint firstAttribute="trailing" secondItem="CXJ-a6-V16" secondAttribute="trailing" id="hQ4-Jz-53I"/>
+                    <constraint firstItem="CXJ-a6-V16" firstAttribute="leading" secondItem="bXg-vn-4Jk" secondAttribute="leading" id="mTM-Tm-xY4"/>
+                    <constraint firstAttribute="bottom" secondItem="CXJ-a6-V16" secondAttribute="bottom" id="nls-U9-xHZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="date" destination="l0W-qt-pg2" id="Cgz-nL-VOw"/>
+                <outlet property="details" destination="ZNt-gY-uST" id="8ia-At-N9M"/>
+                <outlet property="price" destination="TWt-oP-m4L" id="yEt-O9-Qvk"/>
+                <outlet property="service" destination="jcx-cf-wVi" id="q8a-se-Rdu"/>
+                <outlet property="shop" destination="ZOA-iD-EFC" id="kg0-h9-UFl"/>
+                <outlet property="thumb" destination="DZg-Ap-8dg" id="IVK-sb-hIc"/>
+                <outlet property="type" destination="c3h-UR-ghf" id="Pgd-lP-FCT"/>
+            </connections>
+            <point key="canvasLocation" x="205.79710144927537" y="95.758928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="addImg" width="102" height="135"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

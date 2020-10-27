@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="logo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <relationship name="item" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="car" inverseEntity="Item"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="service" optional="YES" attributeType="String"/>
+        <attribute name="shop" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="item" inverseEntity="Car"/>
+    </entity>
+    <elements>
+        <element name="Car" positionX="-411.984375" positionY="-37.65234375" width="128" height="103"/>
+        <element name="Item" positionX="-54" positionY="18" width="128" height="148"/>
+    </elements>
+</model>
