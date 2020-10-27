@@ -14,6 +14,8 @@
 		84274B79253DDC880013ECC6 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274B75253DDC870013ECC6 /* Item+CoreDataProperties.swift */; };
 		84274B7A253DDC880013ECC6 /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274B76253DDC870013ECC6 /* Car+CoreDataClass.swift */; };
 		84274B7B253DDC880013ECC6 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84274B77253DDC880013ECC6 /* Car+CoreDataProperties.swift */; };
+		842926332548AEA90033A307 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842926322548AEA90033A307 /* CalculatorViewController.swift */; };
+		842926362548CA780033A307 /* textFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842926352548CA780033A307 /* textFieldExtension.swift */; };
 		84597F2725372D5A00A013D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597F2625372D5A00A013D1 /* AppDelegate.swift */; };
 		84597F2925372D5A00A013D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597F2825372D5A00A013D1 /* SceneDelegate.swift */; };
 		84597F2B25372D5A00A013D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597F2A25372D5A00A013D1 /* MainViewController.swift */; };
@@ -44,6 +46,8 @@
 		84274B75253DDC870013ECC6 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84274B76253DDC870013ECC6 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84274B77253DDC880013ECC6 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		842926322548AEA90033A307 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		842926352548CA780033A307 /* textFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldExtension.swift; sourceTree = "<group>"; };
 		84597F2325372D5A00A013D1 /* VehicleDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84597F2625372D5A00A013D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84597F2825372D5A00A013D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 			path = MapViewController;
 			sourceTree = "<group>";
 		};
+		842926312548AE8E0033A307 /* CalculatorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				842926322548AEA90033A307 /* CalculatorViewController.swift */,
+				842926352548CA780033A307 /* textFieldExtension.swift */,
+			);
+			path = CalculatorViewController;
+			sourceTree = "<group>";
+		};
 		84597F1A25372D5A00A013D1 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 		84597F2525372D5A00A013D1 /* VehicleDiary */ = {
 			isa = PBXGroup;
 			children = (
+				842926312548AE8E0033A307 /* CalculatorViewController */,
 				84FB38462547737100E828D7 /* DataModel */,
 				84E57DDA25407CA3003F04D1 /* AddItemViewController */,
 				84E57DD325405491003F04D1 /* CustomViews */,
@@ -326,10 +340,12 @@
 				84B58A2E253F5C0600C6ED14 /* RemindersViewController.swift in Sources */,
 				84597F3125372D5A00A013D1 /* VehicleDiary.xcdatamodeld in Sources */,
 				84FB384D254822EB00E828D7 /* AddReminderViewController.swift in Sources */,
+				842926362548CA780033A307 /* textFieldExtension.swift in Sources */,
 				84597F2925372D5A00A013D1 /* SceneDelegate.swift in Sources */,
 				84BD71492538405600ECB876 /* SelectVehicleViewController.swift in Sources */,
 				847B9A472542FA3A006BAD85 /* ShowImageViewController.swift in Sources */,
 				84FB38442547711B00E828D7 /* Reminder.swift in Sources */,
+				842926332548AEA90033A307 /* CalculatorViewController.swift in Sources */,
 				84FB38482547739200E828D7 /* dataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
