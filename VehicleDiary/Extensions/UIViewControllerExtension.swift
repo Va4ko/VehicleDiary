@@ -8,6 +8,8 @@
 import UIKit
 
 extension UIViewController {
+    
+    /// Set background image to view controller programmatically without using imageView on Interface builder
     func setBackground() {
         let backgroundImageView = UIImageView()
         view.addSubview(backgroundImageView)

@@ -25,6 +25,7 @@ var brandsAndModels: [String: [String]] {
     return _brandsAndModels
 }
 
+/// Call HTTPS server and download JSON file with vehicle brands and models
 func downloadVehicles() {
     if let url = URL(string: vehiclesMakeUrl) {
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -42,28 +43,7 @@ func downloadVehicles() {
     }
 }
 
-
-//func downloadVehicles(completion: @escaping ((_ vehicles: [String : [String]]) -> Void)) {
-//    if let url = URL(string: vehiclesMakeUrl) {
-//        URLSession.shared.dataTask(with: url) { data, response, error in
-//            if let data = data {
-//                do { let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String : [String]]
-//
-//                    let vehicles = dict!
-//                    completion(vehicles)
-////                    for key in brandsAndModels.keys.sorted(by: { $0 < $1 }){
-////                        _brands.append(key)
-////                    }
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//        }.resume()
-//    }
-//}
-
-
-
+/// Download logo for selected vehicle with completion handler
 func downloadLogo(completion: @escaping ((_ image: UIImage?) -> Void)) {
     if let url = URL(string: "\(urlBase)\(urlEnd).jpg") {
         URLSession.shared.dataTask(with: url) { data, response, error in

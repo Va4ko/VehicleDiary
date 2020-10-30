@@ -8,41 +8,43 @@
 import UIKit
 
 class RemindersViewController: UIViewController {
-    
+    //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: IBActions
+    @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    //MARK: Properties
     var dataModel = DataModel()
     
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
         setBackground()
         dataModel.loadReminders()
         tableView.reloadData()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataModel.loadReminders()
-        print(dataModel.reminders)
         dataModel.sortReminders()
         tableView.reloadData()
     }
     
-    @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
-        
-    }
-    
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddReminderViewController, segue.identifier == "addReminder" {
             destination.delegate = self
         }
     }
-    
 }
 
+//MARK: - Extensions
 extension RemindersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataModel.reminders.count
@@ -64,7 +66,6 @@ extension RemindersViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = dateFormatter.string(for: dataModel.reminders[indexPath.row].dueDate)
         return cell
     }
-    
 }
 
 extension RemindersViewController: UITableViewDelegate {

@@ -7,9 +7,10 @@
 
 import Foundation
 
-let urlBase = "https://e7ff3b03b7c6.ngrok.io/logos/"
+// MARK: - URLs for vehicle list and logos download
+
+let urlBase = "https://vachkoapp.000webhostapp.com/logos/"
 var urlEnd = ""
-let vehiclesMakeUrl = "https://e7ff3b03b7c6.ngrok.io/vehicles/VehicleModels.json"
-let danukMPS_URL = "http://746859919a02.ngrok.io/danukMPS/DanukMPS.json"
+let vehiclesMakeUrl = "https://vachkoapp.000webhostapp.com/VehicleModels.json"
 
 typealias DownloadComplete = () -> ()

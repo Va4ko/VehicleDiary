@@ -38,18 +38,19 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="EpG-vh-g0W">
                                                 <rect key="frame" x="0.0" y="77" width="355" height="103"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rgi-J7-ieQ">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rgi-J7-ieQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="33.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-S5-FhQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="33.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="25"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" systemColor="systemBlueColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5qo-F1-HKL" customClass="textFieldStyle" customModule="VehicleDiary" customModuleProvider="target">
-                                                                <rect key="frame" x="52" y="0.0" width="303" height="33.5"/>
+                                                                <rect key="frame" x="53" y="0.0" width="302" height="33.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                                 <connections>
@@ -66,11 +67,12 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="46.5" height="34.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="25"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" systemColor="systemBlueColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MK2-x8-E2i" customClass="textFieldStyle" customModule="VehicleDiary" customModuleProvider="target">
                                                                 <rect key="frame" x="56.5" y="0.0" width="298.5" height="34.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                                 <connections>
@@ -135,7 +137,6 @@
                                             <subviews>
                                                 <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRv-hG-Pjo">
                                                     <rect key="frame" x="0.0" y="41" width="375" height="162"/>
-                                                    <color key="tintColor" name="AccentColor"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="Jt9-ff-crT" id="ws9-8K-nnY"/>
                                                         <outlet property="delegate" destination="Jt9-ff-crT" id="tqs-hz-gxj"/>
@@ -308,7 +309,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0sQ-hI-cPh" secondAttribute="height" multiplier="293:40" id="vZg-DE-8zk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -351,13 +352,33 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9FK-T2-OSf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fV2-bV-OqK" id="uw5-h0-CKh"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5R-2v-JxP">
+                                <rect key="frame" x="89" y="548" width="197" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5d8-EW-D4j"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="197" id="wp6-YZ-PVc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="20"/>
+                                <state key="normal" title="Get My Location">
+                                    <color key="titleColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gatMyLocationBtnTapped:" destination="fV2-bV-OqK" eventType="touchUpInside" id="mdg-Yh-Wa8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v3A-WX-Ecm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="V5R-2v-JxP" firstAttribute="centerX" secondItem="F5x-c8-fhB" secondAttribute="centerX" id="G0X-Zt-MjN"/>
                             <constraint firstAttribute="trailing" secondItem="9FK-T2-OSf" secondAttribute="trailing" id="P7t-Er-abW"/>
                             <constraint firstItem="9FK-T2-OSf" firstAttribute="top" secondItem="F5x-c8-fhB" secondAttribute="top" id="bOn-xo-Xqj"/>
+                            <constraint firstItem="v3A-WX-Ecm" firstAttribute="bottom" secondItem="V5R-2v-JxP" secondAttribute="bottom" constant="30" id="d86-zk-HBB"/>
                             <constraint firstItem="9FK-T2-OSf" firstAttribute="bottom" secondItem="v3A-WX-Ecm" secondAttribute="bottom" id="lFc-hY-BJL"/>
                             <constraint firstItem="9FK-T2-OSf" firstAttribute="leading" secondItem="F5x-c8-fhB" secondAttribute="leading" id="n5g-h2-Ilz"/>
                         </constraints>
@@ -391,22 +412,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jvf-kn-YRT">
-                                                    <rect key="frame" x="16" y="9" width="35" height="20.5"/>
+                                                    <rect key="frame" x="25" y="9" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oB5-YJ-2Rg">
-                                                    <rect key="frame" x="16" y="31.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="25" y="31.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.4022099743150685" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="separatorInset" minX="25" minY="0.0" maxX="25" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -426,6 +448,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="aS1-Ri-81P">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pJn-KQ-1qH">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addBtnTapped:" destination="G9b-vo-ZNS" id="Eys-KA-xw7"/>
                                 <segue destination="5yB-lm-yPo" kind="presentation" identifier="addReminder" id="rHq-my-mpz"/>
@@ -538,7 +561,7 @@
                                 <rect key="frame" x="0.0" y="59" width="375" height="559"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1eY-4c-Ped">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="by Name"/>
@@ -551,9 +574,10 @@
                                             <action selector="segmentChanged:" destination="JPw-70-pBp" eventType="valueChanged" id="c5P-ix-QUT"/>
                                         </connections>
                                     </segmentedControl>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Av9-Vj-EM9">
-                                        <rect key="frame" x="0.0" y="39" width="375" height="520"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Av9-Vj-EM9">
+                                        <rect key="frame" x="0.0" y="63" width="375" height="496"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="JPw-70-pBp" id="9Gw-lB-efF"/>
                                             <outlet property="delegate" destination="JPw-70-pBp" id="9Jc-n7-0lL"/>
@@ -649,7 +673,7 @@
                                                             </constraints>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textField>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u5o-ir-vRu">
                                                             <rect key="frame" x="0.0" y="58" width="371" height="220"/>
@@ -686,7 +710,7 @@
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Service" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVM-5f-DXe">
                                                                             <rect key="frame" x="0.0" y="169" width="246" height="51"/>
@@ -694,7 +718,7 @@
                                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         </textField>
                                                                     </subviews>
                                                                 </stackView>
@@ -708,7 +732,7 @@
                                                             </constraints>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -768,10 +792,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5gq-5x-lef" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cars" image="car" id="Mza-Yo-ee0"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="T7a-vb-Vys"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3GC-uh-f3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -782,11 +811,71 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="121.88905547226388"/>
         </scene>
+        <!--Very First View Controller-->
+        <scene sceneID="P8h-A7-whv">
+            <objects>
+                <viewController storyboardIdentifier="VeryFirstViewController" id="tfo-Uc-l2V" customClass="VeryFirstViewController" customModule="VehicleDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eDW-Xi-OvI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firstScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ux5-ap-VUe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II7-Q0-44l">
+                                <rect key="frame" x="16" y="216" width="343" height="379"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQG-Bb-Ung">
+                                <rect key="frame" x="118.5" y="601" width="138" height="36"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="138" id="TC9-jM-ioZ"/>
+                                    <constraint firstAttribute="height" constant="36" id="pzx-Qk-Sq1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NasalizationRg-Regular" family="Nasalization" pointSize="25"/>
+                                <state key="normal" title="Enjoy!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="enjoyBtn:" destination="tfo-Uc-l2V" eventType="touchUpInside" id="Kyc-ZJ-ngE"/>
+                                    <action selector="enjoyBtn:" destination="BDW-2W-CG9" eventType="touchUpInside" id="z8o-UU-Yo6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kwU-Vn-tDt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ux5-ap-VUe" firstAttribute="bottom" secondItem="eDW-Xi-OvI" secondAttribute="bottom" id="0vp-da-qxw"/>
+                            <constraint firstItem="NQG-Bb-Ung" firstAttribute="top" secondItem="II7-Q0-44l" secondAttribute="bottom" constant="6" id="51K-is-6KD"/>
+                            <constraint firstItem="II7-Q0-44l" firstAttribute="leading" secondItem="eDW-Xi-OvI" secondAttribute="leadingMargin" id="92H-VV-RhX"/>
+                            <constraint firstItem="Ux5-ap-VUe" firstAttribute="top" secondItem="eDW-Xi-OvI" secondAttribute="top" id="LSt-Xp-HxO"/>
+                            <constraint firstItem="II7-Q0-44l" firstAttribute="top" secondItem="kwU-Vn-tDt" secondAttribute="top" constant="216" id="PNV-0d-iAI"/>
+                            <constraint firstItem="II7-Q0-44l" firstAttribute="centerX" secondItem="eDW-Xi-OvI" secondAttribute="centerX" id="PQs-QA-r5C"/>
+                            <constraint firstItem="NQG-Bb-Ung" firstAttribute="centerX" secondItem="eDW-Xi-OvI" secondAttribute="centerX" id="TcM-W0-Ggn"/>
+                            <constraint firstItem="kwU-Vn-tDt" firstAttribute="bottom" secondItem="NQG-Bb-Ung" secondAttribute="bottom" constant="30" id="XYm-kM-DHr"/>
+                            <constraint firstAttribute="trailing" secondItem="Ux5-ap-VUe" secondAttribute="trailing" id="bex-KS-vS1"/>
+                            <constraint firstItem="Ux5-ap-VUe" firstAttribute="leading" secondItem="eDW-Xi-OvI" secondAttribute="leading" id="ibS-6b-uVP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeTextView" destination="II7-Q0-44l" id="F4A-9F-zgY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCA-2x-7SH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BDW-2W-CG9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-826" y="122"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TZb-jh-6Jn">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LUD-4Y-FSO" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TapBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="LUD-4Y-FSO" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="iCM-qb-OA9"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1tu-lr-o4B">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -874,6 +963,7 @@
         <image name="alarm" width="30" height="28"/>
         <image name="calc" width="30" height="30"/>
         <image name="car" width="35" height="12"/>
+        <image name="firstScreenBackground" width="1125" height="1920"/>
         <image name="logo" width="490" height="206"/>
         <image name="map" width="35" height="29"/>
         <namedColor name="AccentColor">

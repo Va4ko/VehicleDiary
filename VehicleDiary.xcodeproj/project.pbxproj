@@ -25,6 +25,7 @@
 		84597F3625372D5F00A013D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84597F3425372D5F00A013D1 /* LaunchScreen.storyboard */; };
 		84597F4525372F0F00A013D1 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597F4425372F0F00A013D1 /* UIViewControllerExtension.swift */; };
 		847B9A472542FA3A006BAD85 /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B9A462542FA3A006BAD85 /* ShowImageViewController.swift */; };
+		848630C7254B3A100060CA8E /* VeryFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848630C6254B3A100060CA8E /* VeryFirstViewController.swift */; };
 		84B58A2E253F5C0600C6ED14 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B58A2D253F5C0600C6ED14 /* RemindersViewController.swift */; };
 		84BD71492538405600ECB876 /* SelectVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD71482538405600ECB876 /* SelectVehicleViewController.swift */; };
 		84BD714E2538608300ECB876 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD714D2538608300ECB876 /* URLs.swift */; };
@@ -61,6 +62,7 @@
 		84597F4425372F0F00A013D1 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		845CEF0325403679003074CA /* VehicleDiary v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "VehicleDiary v2.xcdatamodel"; sourceTree = "<group>"; };
 		847B9A462542FA3A006BAD85 /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
+		848630C6254B3A100060CA8E /* VeryFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeryFirstViewController.swift; sourceTree = "<group>"; };
 		84B58A2D253F5C0600C6ED14 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		84BD71482538405600ECB876 /* SelectVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVehicleViewController.swift; sourceTree = "<group>"; };
 		84BD714D2538608300ECB876 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				84597F3F25372DBD00A013D1 /* STORYBOARD */,
 				84597F2625372D5A00A013D1 /* AppDelegate.swift */,
 				84597F2825372D5A00A013D1 /* SceneDelegate.swift */,
+				848630C6254B3A100060CA8E /* VeryFirstViewController.swift */,
 				84597F3225372D5F00A013D1 /* Assets.xcassets */,
 				84597F3425372D5F00A013D1 /* LaunchScreen.storyboard */,
 				84597F3725372D5F00A013D1 /* Info.plist */,
@@ -345,6 +348,7 @@
 				84BD71492538405600ECB876 /* SelectVehicleViewController.swift in Sources */,
 				847B9A472542FA3A006BAD85 /* ShowImageViewController.swift in Sources */,
 				84FB38442547711B00E828D7 /* Reminder.swift in Sources */,
+				848630C7254B3A100060CA8E /* VeryFirstViewController.swift in Sources */,
 				842926332548AEA90033A307 /* CalculatorViewController.swift in Sources */,
 				84FB38482547739200E828D7 /* dataModel.swift in Sources */,
 			);

@@ -37,34 +37,31 @@ class DataModel {
             "Reminders.plist")
     }
     
+    /// Save reminders info to file
     func saveReminders() {
-        print("save")
         let encoder = PropertyListEncoder()
         do {
             let data = try encoder.encode(reminders)
             try data.write(to: dataFilePath(),
                            options: Data.WritingOptions.atomic)
-            print(data)
-            print(dataFilePath())
         } catch {
             print("Error encoding list array: \(error.localizedDescription)")
         }
     }
     
+    /// Load reminders info from file
     func loadReminders() {
-        print("load")
         let path = dataFilePath()
         if let data = try? Data(contentsOf: path) {
             let decoder = PropertyListDecoder()
             do {
                 let temp = try decoder.decode([Reminder].self, from: data)
-                print ("XXX: \(temp)")
+                reminders = temp
                 
             } catch {
                 print("Error decoding list array: \(error.localizedDescription)")
             }
         }
-        print (reminders)
     }
     
     func sortReminders() {

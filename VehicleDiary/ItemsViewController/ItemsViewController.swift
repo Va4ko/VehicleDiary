@@ -10,6 +10,7 @@ import CoreData
 
 class ItemsViewController: UIViewController {
     
+    // MARK: - Enumeration
     enum TableView {
         enum CellIdentifiers: String {
             case CustomItemCell = "CustomItemCell"
@@ -17,6 +18,7 @@ class ItemsViewController: UIViewController {
         }
     }
     
+    // MARK: - IBOutlets
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -28,26 +30,34 @@ class ItemsViewController: UIViewController {
         }
     }
     
+    // MARK: - Properties
     var selectedCar: Car?
     var hasItems = Bool()
     var controller: NSFetchedResultsController<Item>!
     
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor.clear
         setBackground()
         attemptFetch()
         
     }
     
+    // MARK: - Actions
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         attemptFetch()
         tableView.reloadData()
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {
+        
     }
     
+    // MARK: - Helper methods
+    /// Fetch saved entities from CoreData stack
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -86,10 +96,10 @@ class ItemsViewController: UIViewController {
         cell.configureCell(item: item)
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItem", let destination = segue.destination as? AddItemTableViewController {
             destination.selectedCar = selectedCar
-            print(destination.selectedCar!)
             destination.delegate = self
             hasItems = true
             tableView.reloadData()
@@ -109,6 +119,7 @@ class ItemsViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension ItemsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
@@ -193,7 +204,6 @@ extension ItemsViewController: UITableViewDataSource {
             configureCell(cell: cellTwo, indexPath: indexPath as NSIndexPath)
             return cellTwo
         }
-        //        return UITableViewCell()
     }
     
     
@@ -255,6 +265,4 @@ extension ItemsViewController: AddItemTableViewControllerDelegate {
     func addItemTableViewControllerFinishEditing(_ controller: AddItemTableViewController) {
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }

@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+// MARK: - Class Protocol
 protocol SelectVehicleViewControllerDelegate: class {
     func selectVehicleViewControllerDidCancel(
         _ controller: SelectVehicleViewController)
@@ -19,10 +20,12 @@ protocol SelectVehicleViewControllerDelegate: class {
 
 class SelectVehicleViewController: UITableViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var doneBtn: UIBarButtonItem!
     @IBOutlet weak var pickerViewFirst: UIPickerView!
     @IBOutlet weak var pickerViewSecond: UIPickerView!
     
+    // MARK: - Properties
     weak var delegate: SelectVehicleViewControllerDelegate?
     
     var controller: NSFetchedResultsController<Car>!
@@ -58,23 +61,23 @@ class SelectVehicleViewController: UITableViewController {
     
     var logo: UIImage?
     
+    // MARK: - IBActions
     @IBAction func cancelBtnTapped(_ sender: Any) {
         delegate?.selectVehicleViewControllerDidCancel(self)
     }
     
-    
     @IBAction func doneBtnTapped(_ sender: UIBarButtonItem) {
         if selectedBrand != "-- Select vehicle brand --" && selectedModel != "-- Select vehicle model --" {
-
+            
             if checkForAnother() == 0 {
-
+                
                 guard let car = NSEntityDescription.insertNewObject(forEntityName: "Car", into: context) as? Car else {
                     return
                 }
                 car.brand = selectedBrand
                 car.model = selectedModel
                 car.logo = logo!.jpegData(compressionQuality: 1)
-
+                
                 do {
                     try context.save()
                 } catch {
@@ -110,17 +113,14 @@ class SelectVehicleViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "background.jpg"))
+        navigationController?.navigationBar.barTintColor = UIColor.clear
     }
     
+    // MARK: - Helper methods
     func pickerUpdate() {
         var firstElement = _models.first!
         _models.removeAll()
@@ -141,6 +141,7 @@ class SelectVehicleViewController: UITableViewController {
         }
     }
     
+    /// Check in CoreData if there is another antity with the same name and if so add index for new antities
     func checkForAnother() -> Int {
         var cars:[Car] = []
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
@@ -154,9 +155,9 @@ class SelectVehicleViewController: UITableViewController {
         }
         return cars.count
     }
-    
 }
 
+// MARK: Extensions
 extension SelectVehicleViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
@@ -173,7 +174,6 @@ extension SelectVehicleViewController: UIPickerViewDelegate {
             _selectedModel = nil
         } else if pickerView.tag == 2 {
             _selectedModel = models[pickerView.selectedRow(inComponent: 0)]
-            
         }
     }
 }
@@ -204,6 +204,48 @@ extension SelectVehicleViewController: UIPickerViewDataSource {
             return models[row]
         }
         return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        if pickerView.tag == 1 {
+            let pickerLabel = UILabel()
+            let titleData = brands[row]
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Arial", size: 25.0)!, NSAttributedString.Key.foregroundColor:UIColor.red])
+            pickerLabel.attributedText = myTitle
+            pickerLabel.textAlignment = .center
+            return pickerLabel
+        } else if pickerView.tag == 2 {
+            let pickerLabel = UILabel()
+            let titleData = models[row]
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Arial", size: 25.0)!, NSAttributedString.Key.foregroundColor:UIColor.white])
+            pickerLabel.attributedText = myTitle
+            pickerLabel.textAlignment = .center
+            return pickerLabel
+        }
+        
+        let pickerLabel = UILabel()
+        return pickerLabel
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+        if (section == 0) {
+            headerView.backgroundColor = UIColor.red
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+            label.text = "Select Brand:"
+            label.textAlignment = .center
+            label.textColor = UIColor.white
+            headerView.addSubview(label)
+        } else {
+            headerView.backgroundColor = UIColor.black
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+            label.text = "Select Model:"
+            label.textAlignment = .center
+            label.textColor = UIColor.white
+            headerView.addSubview(label)
+        }
+        
+        return headerView
     }
     
 }

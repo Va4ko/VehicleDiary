@@ -166,6 +166,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="kvk-vf-Vs3" firstAttribute="leading" secondItem="c5I-fZ-Mcs" secondAttribute="leading" constant="5" id="3Zm-6t-QJx"/>
                     <constraint firstItem="kvk-vf-Vs3" firstAttribute="top" secondItem="c5I-fZ-Mcs" secondAttribute="top" constant="5" id="iGr-6r-eSk"/>
@@ -173,6 +174,7 @@
                     <constraint firstAttribute="bottom" secondItem="kvk-vf-Vs3" secondAttribute="bottom" constant="5" id="vt6-cw-CZk"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="date" destination="ftT-7K-Q6q" id="JKf-QE-59C"/>
                 <outlet property="details" destination="cTR-T2-Vla" id="tUN-EO-kp0"/>

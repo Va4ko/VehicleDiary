@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Class Protocol
 protocol AddReminderViewControllerDelegate: class {
     func AddReminderViewControllerDidCancel(_ controller: AddReminderViewController)
     func AddReminderViewController(_ controller: AddReminderViewController, didFinishAdding item: Reminder)
@@ -14,11 +15,13 @@ protocol AddReminderViewControllerDelegate: class {
 
 class AddReminderViewController: UIViewController {
     
+    //MARK: - Properties
     weak var delegate: AddReminderViewControllerDelegate?
     
     let datePicker = UIDatePicker()
     private var dueDate = Date()
     
+    //MARK: - IBOutlets
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var reminderField: UITextField!
     @IBOutlet weak var dateField: UITextField! {
@@ -27,6 +30,7 @@ class AddReminderViewController: UIViewController {
         }
     }
     
+    //MARK: - IBActions
     @IBAction func saveBtnTapped(_ sender: UIButton) {
         reminderField.resignFirstResponder()
         
@@ -48,16 +52,17 @@ class AddReminderViewController: UIViewController {
         }
     }
     
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setDatePicker()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         reminderField.becomeFirstResponder()
     }
     
+    // MARK: - Helper methods
     func setDatePicker(){
         dateField.inputView = datePicker
         datePicker.datePickerMode = .dateAndTime
@@ -80,7 +85,6 @@ class AddReminderViewController: UIViewController {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) {
             granted, error in
-            // do nothing
         }
         
         let dateformatter = DateFormatter()
@@ -93,7 +97,7 @@ class AddReminderViewController: UIViewController {
     
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - Extensions
 extension AddReminderViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         view.endEditing(true)

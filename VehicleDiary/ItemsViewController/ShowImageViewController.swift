@@ -10,10 +10,13 @@ import CoreData
 
 class ShowImageViewController: UIViewController {
     
+    // MARK: IBOutlets
     @IBOutlet weak var bigImage: UIImageView!
     
+    // MARK: Properties
     var item: Item?
     
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -41,7 +41,7 @@ class Reminder: Codable {
             let center = UNUserNotificationCenter.current()
             center.add(request)
         }
-
+        
     }
     
     private func removeNotification() {

@@ -8,10 +8,12 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-        
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var hpField: textFieldStyle!
     @IBOutlet weak var kwField: textFieldStyle!
     
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -19,6 +21,11 @@ class CalculatorViewController: UIViewController {
         hpField.becomeFirstResponder()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    // MARK: - IBActions
     @IBAction func hpFieldDidChanged(_ sender: Any) {
         let hpFieldInt: Double? = Double(hpField.text!)
         if hpFieldInt != nil {
@@ -38,6 +45,7 @@ class CalculatorViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension CalculatorViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == hpField {
@@ -55,7 +63,7 @@ extension CalculatorViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return false
-        }
+        self.view.endEditing(true)
+        return false
+    }
 }

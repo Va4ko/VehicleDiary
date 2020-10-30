@@ -10,14 +10,16 @@ import CoreData
 
 class MainViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addVehicleBtn: UIButton!
     
+    // MARK: - IBOutlets
     var controller: NSFetchedResultsController<Car>!
     
+    // MARK: - UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setBackground()
         downloadVehicles()
         attemptFetch()
@@ -31,6 +33,7 @@ class MainViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SelectVehicle",
            let destination = segue.destination as? SelectVehicleViewController {
@@ -44,18 +47,17 @@ class MainViewController: UIViewController {
                 let car = controller.object(at: indexPath as IndexPath)
                 destination.title = "\(car.brand!) \(car.model!)"
                 destination.selectedCar = car
-                
             }
         }
     }
     
+    // MARK: - Helper methods
     func configureCell(cell: VehicleCell, indexPath: NSIndexPath) {
-        
         let car = controller.object(at: indexPath as IndexPath)
         cell.configureCell(car: car)
-        
     }
     
+    /// Fetch saved entities from CoreData stack
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
@@ -77,6 +79,7 @@ class MainViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension MainViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
@@ -99,6 +102,13 @@ extension MainViewController: UITableViewDataSource {
         }
         
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        
+        if(indexPath.row % 2 == 0){
+            
+            cell.cellBg.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        } else{
+            cell.cellBg.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
         
         return cell
     }
@@ -202,11 +212,11 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: SelectVehicleViewControllerDelegate {
     func selectVehicleViewControllerFinishAdding(_ controller: SelectVehicleViewController) {
+        tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
     
     func selectVehicleViewControllerDidCancel(_ controller: SelectVehicleViewController) {
         navigationController?.popViewController(animated: true)
     }
-    
 }
